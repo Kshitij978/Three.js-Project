@@ -34,7 +34,7 @@ var scene, cam, renderer;
             }
             init();
 
-            // Event Listeners
+           // Event Listeners
             //resize the scene on window resize.
             // -----------------------------------------------------------------------------
             window.addEventListener( 'resize', onWindowResize, false );

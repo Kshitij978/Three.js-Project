@@ -1,6 +1,11 @@
+<!--Doesn't work when models or textures are loaded from external files 
+due to browser's same origin policy security restrictions.
+Try running it from local web server as "http://localhost/yourFile.html"-->
+
 <!DOCTYPE html>
 <html>
 	<head>
+        <meta charset="utf-8">
 		<title>3DModel</title>
 		<style>
 			body { margin: 0; }
@@ -9,40 +14,8 @@
 	</head>
 	<body>
         <script src="js/three.js"></script>
-        <script src = "GLTFLoader.js"></script>
-        <script src="OrbitControls.js"></script>
-        <script>
-            var scene, cam, renderer;
-            function init (){
-                scene = new THREE.Scene();
-
-                cam = new THREE.PerspectiveCamera(40, window.innerWidth/innerHeight, 1, 50000);
-                cam.rotation.y = 45/180 * Math.PI;
-                cam.position.set(-10,0,10);
-                cam.lookAt(new THREE.Vector3(0,0,0));
-
-                controls = new THREE.OrbitControls(cam);
-                controls.addEventListener('change', renderer);
-
-                renderer = new THREE.WebGLRenderer();
-                renderer.setSize(window.innerWidth, window.innerHeight);
-                document.body.appendChild(renderer.domElement);
-
-                var loader = new THREE.GLTFLoader();
-                loader.load('Experiment.glb', function(gltf){
-                    
-                    scene.add(gltf.scene);
-                    animate();
-                
-                });
-            }
-            function animate()
-            {
-                renderer.render(scene, cam);
-                requestAnimationFrame(animate);
-            }
-            init();
-
-        </script>
+        <script src = "js/GLTFLoader.js"></script>
+        <script src="js/OrbitControls.js"></script>
+        <script src="js/Model.js"></script>
     </body>
 </html>

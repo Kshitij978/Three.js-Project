@@ -12,7 +12,6 @@ const scene = new THREE.Scene();
 //camera.
 cam = new THREE.PerspectiveCamera(45, window.innerWidth/innerHeight, 0.1, 1000)
 cam.position.z = 800;
-cam.lookAt(new THREE.Vector3(350, 0, -350));
             
 //camera control.
 controls = new THREE.OrbitControls(cam);
@@ -48,8 +47,13 @@ loader.load( 'fonts/Cinzel_Regular.json', function ( font ) {
         });
         //text mesh.
         var textMesh = new THREE.Mesh(textGeometry, textMat);
-            scene.add(textMesh);
-            animate();
+	
+	//realigning the center of the text
+        textGeometry.computeBoundingBox();
+        textGeometry.boundingBox.getCenter(textMesh.position).multiplyScalar(-1);
+	
+        scene.add(textMesh);
+        animate();
 });
 
 function animate(){

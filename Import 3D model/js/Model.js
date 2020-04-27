@@ -6,8 +6,8 @@ var scene, cam, renderer;
                 //Camera
                 cam = new THREE.PerspectiveCamera(40, window.innerWidth/innerHeight, 1, 50000);
                 cam.rotation.y = 45/180 * Math.PI;
-                cam.position.set(-10,0,10);
-                cam.lookAt(new THREE.Vector3(0,0,0));
+                cam.position.set(-10, 0, 10);
+                cam.lookAt(0, 0, 0);
 
                 controls = new THREE.OrbitControls(cam);
                 controls.addEventListener('change', renderer);

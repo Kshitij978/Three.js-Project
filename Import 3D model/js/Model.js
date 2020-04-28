@@ -10,7 +10,7 @@ var scene, cam, renderer;
                 cam.lookAt(0, 0, 0);
 
                 controls = new THREE.OrbitControls(cam);
-                controls.addEventListener('change', renderer);
+                controls.addEventListener('change', animate);
                 
                 //Render
                 renderer = new THREE.WebGLRenderer();

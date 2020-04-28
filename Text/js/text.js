@@ -15,7 +15,7 @@ cam.position.z = 800;
             
 //camera control.
 controls = new THREE.OrbitControls(cam);
-controls.addEventListener('change', renderer);
+controls.addEventListener('change', animate);
 
 //render.
 renderer = new THREE.WebGLRenderer();

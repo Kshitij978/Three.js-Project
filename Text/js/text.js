@@ -36,7 +36,7 @@ loader.load( 'fonts/Cinzel_Regular.json', function ( font ) {
 		    bevelThickness: 10,
 		    bevelSize: 8,
 		    bevelOffset: 0,
-            bevelSegments: 5
+            	    bevelSegments: 5
             });
         //text material.
         var textMat = new THREE.MeshPhongMaterial({
